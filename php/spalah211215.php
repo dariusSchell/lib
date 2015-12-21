@@ -56,7 +56,7 @@ var_dump(massiveSum($arrayAdv));
     ?>
     <?php
     for ($i = 1; $i < 6; $i++) {?>
-    <a href="spalah191215.php?page=<?echo $i?>">Page <?echo $i?></a>
+    <a href="spalah211215.php?page=<?echo $i?>">Page <?echo $i?></a>
     <?php }?>
     <?
     var_dump($_GET);
