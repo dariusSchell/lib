@@ -12,27 +12,25 @@ $massive30len = count($massive30);
 for ($i = 0; $i < $massive30len; $i++) {
     var_dump($massive30[$i]);
 }
-function bubSort(array $massive)
+// Пузырьковый алгоритм.
+function bubbleSort(array $array)
 {
-    $massiveCheck = false;
-    while (false === $massiveCheck) {
-        $massiveCheck = true;
-        for ($i = 0; $i < count($massive) - 1; ++$i) {
-            $massiveStatus = $massive[$i];
-            $massiveStep = $massive[$i + 1];
-            if ($massiveStep < $massiveStatus) {
-                $massive[$i] = $massiveStep;
-                $massive[$i + 1] = $massiveStatus;
-                $massiveCheck = false;
+    $size = sizeof($array);
+    for ($i = 1; $i < $size; $i++){
+        for ($x = $size - 1; $x >= $i; $x--){
+            if ($array[$x - 1] > $array[$x]){
+                $result = $array[$x - 1];
+                $array[$x - 1] = $array[$x];
+                $array[$x] = $result;
             }
         }
     }
-    return $massive;
+    return $array;
 }
+$array = [9 , 7, 3, 5, 1, 12, 15, 18, 0];
+$array = bubbleSort($array);
+var_dump($array);
 
-$massive30 = [9, 7, 3, 5, 1];
-$massive30 = bubSort($massive30);
-var_dump($massive30);
 
 //4. Вывести на экран все шестизначные счастливые билеты. Билет называется счастливым,
 //если сумма первых трех цифр в номере билета равна сумме последних трех цифр.
@@ -43,7 +41,7 @@ $massive40 = [];
 $massive40approved = 0;
 for ($x = 0; $x < 12; $x++) {
     for ($y = 0; $y < 6; $y++) {
-        $massive40[$x][$y] = mt_rand(1, 9);
+        $massive40[$x][$y] = mt_rand(1, 3);
     }
 }
 // Проходим по циклу сравнивая значения.

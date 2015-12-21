@@ -31,5 +31,7 @@ var_dump($result);
 $char70 = "So,now_we_go_to_bad.Ok!?";
 $char70symbols = [',', '_', '.', '!', '?'];
 $strReplace70 = str_replace($char70symbols, ' ', $char70);
-var_dump($strReplace70);
+$strToMassive70 = explode(' ', $strReplace70);
+var_dump($char70);
+var_dump($strToMassive70);
 // Как альтернатива регулярным выражениям. Был уже пример с ними.
