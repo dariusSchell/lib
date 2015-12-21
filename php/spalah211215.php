@@ -50,16 +50,29 @@ var_dump(massiveSum($arrayAdv));
 <div>
     <?php
     for ($i = 1; $i < 6; $i++) {
-        print_r('<a href="index.php?page='.$i.'">Page'.$i.'</a> <br/>');
+        print_r('<a href="index.php?page=' . $i . '">Page' . $i . '</a> <br/>');
         print_r("<a href=\"index.php?page=$i\">Page$i</a><br />");
     }
     ?>
     <?php
-    for ($i = 1; $i < 6; $i++) {?>
-    <a href="spalah211215.php?page=<?echo $i?>">Page <?echo $i?></a>
-    <?php }?>
+    for ($i = 1; $i < 6; $i++) { ?>
+        <a href="spalah211215.php?page=<? echo $i ?>">Page <? echo $i ?></a>
+    <?php } ?>
     <?
     var_dump($_GET);
+    ?>
+    <?php
+    //    if (isset ($_GET['id']) && is_int($_GET['id'])){
+    //        $id = $_GET['id'];
+    //    }
+    ?>
+    <form action="" method="POST">
+        <input type="text" name="name">
+        <input type="submit" value="value">
+    </form>
+    <?php
+    $name = $_POST['name'];
+    var_dump($name);
     ?>
 </div>
 </body>
